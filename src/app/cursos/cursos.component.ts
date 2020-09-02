@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {CursosService} from './cursos.service';
+import { CursosService } from './cursos.service';
 
 @Component({
   selector: 'app-cursos',
@@ -8,15 +8,15 @@ import {CursosService} from './cursos.service';
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent implements OnInit {
-  cursos: string[]=[];
+  cursos: string[] = [];
   cursosService: CursosService;
-
-  constructor() {
-    this.cursosService= new CursosService();
-   }
+  //a injeção de dependencia é feita atraves do construtor
+  constructor(_cursosService: CursosService) {
+    this.cursosService = _cursosService;
+  }
 
   ngOnInit(): void {
-    this.cursos=this.cursosService.getCursos();
+    this.cursos = this.cursosService.getCursos();
   }
 
 }
