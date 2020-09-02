@@ -1,0 +1,14 @@
+<p>criar-curso works!</p>
+<!-- para pegar o valor do input #curso declara variavel 
+colocar value para nao fazer referencia ao proprio input-->
+<input type="text" #cursoInput>
+<button (click)="onAddCurso(cursoInput.value)">
+Adicionar Curso
+
+</button>
+<h5>Lista de cursos</h5>
+<ul>
+    <li *ngFor="let curso of cursos">
+        {{ curso }}
+    </li>
+</ul>

@@ -5,8 +5,14 @@ import { Injectable } from '@angular/core';
 //avisa ao angular que é uma classe injetavel
 @Injectable()
 export class CursosService{
-
+    private cursos: string[]=['Angular2','Java','Node'];
+    constructor(){
+        console.log('CursoService');
+    }
     getCursos(){
-       return ['Angular2','Java','Node']; 
+       return this.cursos; 
+    }
+    addCurso(curso: string){
+        this.cursos.push(curso);
     }
 }
